@@ -1,11 +1,14 @@
 version: '3.8'
+
 services:
   db:
     image: postgres:16
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: vlad
-      POSTGRES_DB: postgres
+      POSTGRES_DB: mydatabase  # Это создаст базу данных при инициализации
+    ports:
+      - "5432:5432"
     volumes:
       - pgdata:/var/lib/postgresql/data
 
@@ -14,11 +17,13 @@ services:
     depends_on:
       - db
     environment:
-      - POSTGRES_HOST=db
-      - POSTGRES_PORT=5432
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=vlad
-      - POSTGRES_DB=postgres
-
+      POSTGRES_HOST: db
+      POSTGRES_PORT: 5432
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: vlad
+      POSTGRES_DB: mydatabase  # Исправлено на mydatabase
+    ports:
+      - "5001:5000"  # Убедитесь, что вы используете разные порты
+     
 volumes:
   pgdata:

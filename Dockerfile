@@ -13,6 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 # Копируем все остальные файлы в рабочую директорию
 COPY . .
 
-EXPOSE 5432
+
+
 # Запускаем бота
 CMD ["python", "app.py"]
