@@ -33,7 +33,7 @@ jobs:
     - name: Check HTML validity
       run: |
         pip install html5lib
-        python -c "import html5lib; html5lib.parse(open('index.html').read())"
+        python -c "import html5lib; html5lib.parse(open('templates/index.html').read())"
     
     - name: Test backend
       run: |
