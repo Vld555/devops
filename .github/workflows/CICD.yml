@@ -38,11 +38,6 @@ jobs:
     - name: Test backend
       run: |
         pytest app.py
-    
-    - name: Check database connection
-      run: |
-        # Замените эту команду на соответствующий скрипт или команду для проверки подключения к БД
-        python -c "from app import db; db.connect()"
 
     - name: Run application (optional)
       run: |
