@@ -10,7 +10,7 @@ def create_database():
         dbname='postgres',  # Подключаемся к базе данных по умолчанию
         user='postgres',
         password='vlad',
-        host='db',
+        host='localhost',
         port='5432'
     )
     connection.autocommit = True  # Включаем автоматическое подтверждение
@@ -34,7 +34,7 @@ conn = psycopg2.connect(
     dbname="mydatabase",
     user="postgres",
     password="vlad",
-    host="db",
+    host="localhost",
     port="5432"
 )
 
