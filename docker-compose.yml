@@ -6,7 +6,7 @@ services:
     environment:
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: vlad
-      POSTGRES_DB: mydatabase  # Это создаст базу данных при инициализации
+      POSTGRES_DB: mydatabase  
     ports:
       - "5432:5432"
     volumes:
@@ -21,9 +21,8 @@ services:
       POSTGRES_PORT: 5432
       POSTGRES_USER: postgres
       POSTGRES_PASSWORD: vlad
-      POSTGRES_DB: mydatabase  # Исправлено на mydatabase
+      POSTGRES_DB: mydatabase  
     ports:
-      - "5001:5000"  # Убедитесь, что вы используете разные порты
-     
+      - "5001:5000"  
 volumes:
   pgdata:
